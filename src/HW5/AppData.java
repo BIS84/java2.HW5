@@ -41,6 +41,23 @@ public class AppData {
         return str;
     }
 
+    public void fileReader() throws IOException {
+
+        try (BufferedReader in = new BufferedReader(new FileReader("./table.csv"))) {
+            String result;
+            while ((result = in.readLine()) != null) {
+                String[] subStr;
+                subStr = result.split("\n");
+
+                for (String s : subStr) {
+                    System.out.println(s);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void fileWriter(AppData appData) throws IOException {
 
         FileOutputStream fos = null;
@@ -60,3 +77,4 @@ public class AppData {
         }
     }
 }
+

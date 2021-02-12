@@ -12,5 +12,7 @@ public class Main {
         AppData table = new AppData(header1, data1);
 
         table.fileWriter(table);
+
+        table.fileReader();
     }
 }
